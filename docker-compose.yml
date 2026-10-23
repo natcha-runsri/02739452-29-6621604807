@@ -43,9 +43,9 @@ services:
       - -c
       - |
         airflow db migrate &&
-        airflow users create --role Admin
-          --username "$${AIRFLOW_ADMIN_USER}" --password "$${AIRFLOW_ADMIN_PASSWORD}"
-          --email "$${AIRFLOW_ADMIN_EMAIL}" --firstname Admin --lastname User || true
+        airflow users create --role Admin \
+          --username "$${AIRFLOW_ADMIN_USER}" --password "$${AIRFLOW_ADMIN_PASSWORD}" \
+          --email "$${AIRFLOW_ADMIN_EMAIL}" --firstname Admin --lastname User
     restart: "no"
 
   airflow-webserver:
